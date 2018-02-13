@@ -63,6 +63,7 @@ const postCSSLoaderOptions = {
   // https://github.com/facebook/create-react-app/issues/2677
   ident: 'postcss',
   plugins: () => [
+    require('postcss-use'),
     require('postcss-flexbugs-fixes'),
     autoprefixer({
       flexbox: 'no-2009',
@@ -413,7 +414,7 @@ module.exports = {
     // having to parse `index.html`.
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
-      publicPath: publicPath
+      publicPath: publicPath,
     }),
     // Generate a service worker script that will precache, and keep up to date,
     // the HTML & assets that are part of the Webpack build.
